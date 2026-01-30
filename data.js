@@ -243,7 +243,7 @@ window.BAH.CARS = [
     "fuel": "Petrol",
     "bodyType": "Motorcycle",
     "seats": 2,
-    "image": "images/r15.jpg",
+    "image": "images/R15.jpg",
     "tags": [
       "Certified",
       "Inspected"
