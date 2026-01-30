@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BorneoAutoHub | Home</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="topbar">
+<div class="container topbar-inner">
+<div class="topbar-left">Certified used cars • Transparent pricing • East Malaysia</div>
+<div class="topbar-right"><a href="contact.html">Support</a></div>
+</div>
+</div>
+<header class="header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<div class="brand-mark">BAH</div>
+<div class="brand-text">
+<div class="brand-name">BorneoAutoHub</div>
+<div class="brand-sub">Buy • Rent • Services</div>
+</div>
+</a>
+<form class="search" id="globalSearchForm">
+<input aria-label="Search cars" id="globalSearchInput" placeholder="Search: Myvi, SUV, 2021..." type="search"/>
+<button class="btn" type="submit">Search</button>
+</form>
+<nav class="nav"><a aria-label="Home" class="nav-icon" href="index.html"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3 3 10v10a1 1 0 0 0 1 1h6v-7h4v7h6a1 1 0 0 0 1-1V10l-9-7Z" fill="currentColor"></path></svg></a><a href="buy.html">Buy</a><a href="rent.html">Rent</a><div class="dropdown"><a class="dropbtn" href="services.html">Services<span class="caret">▾</span></a><div class="dropdown-menu"><a href="finance.html">Finance Calculator</a><a href="trade-in.html">Trade-in Estimation</a><a href="compare.html">Compare Cars</a><a href="services.html#inspection">Inspection Checklist</a></div></div><a href="contact.html">Contact</a></nav>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="container hero-inner reveal">
+<div class="hero-copy">
+<h1>Find your next car — the easy way.</h1>
+<p class="muted">Browse certified listings, view full details, compare options, and enquire in minutes.</p>
+<div class="hero-cta">
+<a class="btn" href="buy.html">Browse cars</a>
+<a class="btn-outline" href="trade-in.html">Trade-in estimate</a>
+</div>
+<div class="trust-row">
+<div class="trust"><span class="dot"></span>Certified listings</div>
+<div class="trust"><span class="dot"></span>Transparent pricing</div>
+<div class="trust"><span class="dot"></span>Easy enquiries</div>
+</div>
+</div>
+<div class="hero-card card">
+<div class="hero-card-title">How it works</div>
+<ol class="steps">
+<li><b>Browse</b> verified cars with clear specs</li>
+<li><b>View details</b> and compare options</li>
+<li><b>Enquire</b> to arrange viewing or financing</li>
+</ol>
+<a class="link" href="buy.html">Start browsing →</a>
+</div>
+</div>
+</section>
+<section class="container section">
+<div class="section-head reveal">
+<h2>Featured Vehicles &amp; Deals</h2>
+<p class="muted">Popular picks based on affordability and condition.</p>
+</div>
+<div class="grid" id="featuredGrid"></div>
+</section>
+<section class="section section-alt">
+<div class="container reveal">
+<div class="section-head">
+<h2>About BorneoAutoHub</h2>
+<p class="muted">We help you buy, rent, or trade in with clear specs, transparent pricing, and an easy enquiry flow — built for drivers in East Malaysia.</p>
+</div>
+<div class="grid">
+<div class="col-6">
+<div class="card">
+<div class="card-body">
+<h3 style="margin:0 0 8px;">Why drivers choose us</h3>
+<ul class="list">
+<li><b>Clear listings:</b> mileage, year, transmission and price upfront</li>
+<li><b>Realistic steps:</b> view details, compare, estimate monthly, then enquire</li>
+<li><b>Support:</b> trade‑in estimate and rental booking in one site</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div class="card">
+<div class="card-body">
+<h3 style="margin:0 0 8px;">Get help fast</h3>
+<p class="muted" style="margin:0 0 10px;">Have questions about financing, viewing, trade‑in, or rental availability? Send an enquiry and our team will contact you.</p>
+<div class="cta-actions">
+<a class="btn" href="buy.html">Browse cars</a>
+<button class="btn-outline" data-car-id="" data-open="enquiryModal" type="button">General enquiry</button>
+<a class="btn-outline" href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cta-band">
+<div>
+<h3>Ready to find your next car?</h3>
+<p>Explore listings, compare options, and calculate monthly payments — all in a few clicks.</p>
+</div>
+<div class="cta-actions">
+<a class="btn" href="buy.html">Start browsing</a>
+<a class="btn-outline" href="finance.html">Payment calculator</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div aria-hidden="true" class="modal" id="enquiryModal">
+<div class="modal-card">
+<div class="modal-head">
+<div>
+<div class="modal-title" id="enquiryCarName">Vehicle enquiry</div>
+<div class="modal-sub" id="enquiryCarMeta"></div>
+</div>
+<button aria-label="Close" class="icon-btn" data-close="enquiryModal">✕</button>
+</div>
+<div class="modal-body">
+<div class="mini-card">
+<img alt="Selected car" id="enquiryCarImg" src=""/>
+<div>
+<div class="mini-title">You’re enquiring about</div>
+<div class="mini-name" id="enquiryCarName2"></div>
+<div class="mini-meta" id="enquiryCarMeta2"></div>
+</div>
+</div>
+<form class="form" id="enquiryForm">
+<input id="enquiryCarId" type="hidden"/>
+<div class="form-row">
+<label>Full name</label>
+<input id="enqName" placeholder="Your name" type="text"/>
+</div>
+<div class="form-row">
+<label>Phone number</label>
+<input id="enqPhone" placeholder="01X-XXXXXXX" type="tel"/>
+</div>
+<div class="form-row">
+<label>Email</label>
+<input id="enqEmail" placeholder="you@example.com" type="email"/>
+</div>
+<div class="form-row">
+<label>Message</label>
+<textarea id="enqMsg" placeholder="Questions about financing, viewing, or trade-in..." rows="3"></textarea>
+</div>
+<button class="btn" type="submit">Send enquiry</button>
+<div class="form-msg" id="enquiryMsg"></div>
+</form>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-brand">BorneoAutoHub</div>
+<p class="muted">Certified listings, transparent pricing, and easy enquiries — built for a smooth car-buying experience.</p>
+</div>
+<div>
+<div class="footer-title">Explore</div>
+<a class="footer-link" href="buy.html">Buy vehicles</a>
+<a class="footer-link" href="rent.html">Rent a car</a>
+<a class="footer-link" href="trade-in.html">Trade-in estimate</a>
+</div>
+<div>
+<div class="footer-title">Support</div>
+<a class="footer-link" href="contact.html">Help &amp; Contact</a>
+<span class="footer-link muted">Mon–Fri, 9am–6pm</span>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>© <span id="yearNow"></span> BorneoAutoHub. All rights reserved.</span>
+<span class="muted">Prices and availability may change without notice.</span>
+</div>
+</footer>
+<div id="toastHost" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+<script>document.getElementById('yearNow').textContent = new Date().getFullYear();</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

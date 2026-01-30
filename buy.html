@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BorneoAutoHub | Buy</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="topbar">
+<div class="container topbar-inner">
+<div class="topbar-left">Certified used cars • Transparent pricing • East Malaysia</div>
+<div class="topbar-right"><a href="contact.html">Support</a></div>
+</div>
+</div>
+<header class="header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<div class="brand-mark">BAH</div>
+<div class="brand-text">
+<div class="brand-name">BorneoAutoHub</div>
+<div class="brand-sub">Buy • Rent • Services</div>
+</div>
+</a>
+<form class="search" id="globalSearchForm">
+<input aria-label="Search cars" id="globalSearchInput" placeholder="Search: Myvi, SUV, 2021..." type="search"/>
+<button class="btn" type="submit">Search</button>
+</form>
+<nav class="nav"><a aria-label="Home" class="nav-icon" href="index.html"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3 3 10v10a1 1 0 0 0 1 1h6v-7h4v7h6a1 1 0 0 0 1-1V10l-9-7Z" fill="currentColor"></path></svg></a><a href="buy.html">Buy</a><a href="rent.html">Rent</a><div class="dropdown"><a class="dropbtn" href="services.html">Services<span class="caret">▾</span></a><div class="dropdown-menu"><a href="finance.html">Finance Calculator</a><a href="trade-in.html">Trade-in Estimation</a><a href="compare.html">Compare Cars</a><a href="services.html#inspection">Inspection Checklist</a></div></div><a href="contact.html">Contact</a></nav>
+</div>
+</header>
+<main class="container page">
+<div class="page-head reveal">
+<h1>Buy vehicles</h1>
+<p class="muted">Filter by price, year, mileage, and more — then view full details before enquiring.</p>
+</div>
+<section class="buy-layout">
+<aside class="filters card reveal">
+<div class="filters-head">
+<h3>Filters</h3>
+<button class="btn-outline small" id="clearFilters" type="button">Clear</button>
+</div>
+<div class="filters-body">
+<label class="field">
+<span>Keyword</span>
+<input id="filterKeyword" placeholder="Myvi, SUV, Honda..." type="text"/>
+</label>
+<div class="field-grid">
+<label class="field">
+<span>Min price (RM)</span>
+<input id="filterMinPrice" min="0" placeholder="20000" step="500" type="number"/>
+</label>
+<label class="field">
+<span>Max price (RM)</span>
+<input id="filterMaxPrice" min="0" placeholder="90000" step="500" type="number"/>
+</label>
+</div>
+<div class="field-grid">
+<label class="field">
+<span>Min year</span>
+<input id="filterMinYear" max="2026" min="2000" placeholder="2018" type="number"/>
+</label>
+<label class="field">
+<span>Max mileage (km)</span>
+<input id="filterMaxMileage" min="0" placeholder="120000" step="1000" type="number"/>
+</label>
+</div>
+<label class="field">
+<span>Transmission</span>
+<select id="filterTransmission">
+<option value="">Any</option>
+<option value="Automatic">Automatic</option>
+<option value="Manual">Manual</option>
+</select>
+</label>
+<div class="field">
+<span>Body type</span>
+<div class="chips" id="typeChips"></div>
+</div>
+</div>
+</aside>
+<section class="results">
+<div class="results-bar reveal">
+<div class="result-count" id="resultCount">0 results</div>
+<div class="sort">
+<label class="muted">Sort</label>
+<select id="sortBy">
+<option value="relevance">Relevance</option>
+<option value="price-asc">Price: low to high</option>
+<option value="price-desc">Price: high to low</option>
+<option value="year-desc">Year: newest</option>
+<option value="mileage-asc">Mileage: lowest</option>
+</select>
+</div>
+</div>
+<div class="grid" id="buyGrid"></div>
+</section>
+</section>
+</main>
+<div aria-hidden="true" class="modal" id="enquiryModal">
+<div class="modal-card">
+<div class="modal-head">
+<div>
+<div class="modal-title" id="enquiryCarName">Vehicle enquiry</div>
+<div class="modal-sub" id="enquiryCarMeta"></div>
+</div>
+<button aria-label="Close" class="icon-btn" data-close="enquiryModal">✕</button>
+</div>
+<div class="modal-body">
+<div class="mini-card">
+<img alt="Selected car" id="enquiryCarImg" src=""/>
+<div>
+<div class="mini-title">You’re enquiring about</div>
+<div class="mini-name" id="enquiryCarName2"></div>
+<div class="mini-meta" id="enquiryCarMeta2"></div>
+</div>
+</div>
+<form class="form" id="enquiryForm">
+<input id="enquiryCarId" type="hidden"/>
+<div class="form-row">
+<label>Full name</label>
+<input id="enqName" placeholder="Your name" type="text"/>
+</div>
+<div class="form-row">
+<label>Phone number</label>
+<input id="enqPhone" placeholder="01X-XXXXXXX" type="tel"/>
+</div>
+<div class="form-row">
+<label>Email</label>
+<input id="enqEmail" placeholder="you@example.com" type="email"/>
+</div>
+<div class="form-row">
+<label>Message</label>
+<textarea id="enqMsg" placeholder="Questions about financing, viewing, or trade-in..." rows="3"></textarea>
+</div>
+<button class="btn" type="submit">Send enquiry</button>
+<div class="form-msg" id="enquiryMsg"></div>
+</form>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-brand">BorneoAutoHub</div>
+<p class="muted">Certified listings, transparent pricing, and easy enquiries — built for a smooth car-buying experience.</p>
+</div>
+<div>
+<div class="footer-title">Explore</div>
+<a class="footer-link" href="buy.html">Buy vehicles</a>
+<a class="footer-link" href="rent.html">Rent a car</a>
+<a class="footer-link" href="trade-in.html">Trade-in estimate</a>
+</div>
+<div>
+<div class="footer-title">Support</div>
+<a class="footer-link" href="contact.html">Help &amp; Contact</a>
+<span class="footer-link muted">Mon–Fri, 9am–6pm</span>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>© <span id="yearNow"></span> BorneoAutoHub. All rights reserved.</span>
+<span class="muted">Prices and availability may change without notice.</span>
+</div>
+</footer>
+<div id="toastHost" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+<script>document.getElementById('yearNow').textContent = new Date().getFullYear();</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

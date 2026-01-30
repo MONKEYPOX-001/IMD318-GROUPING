@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BorneoAutoHub | Trade-in</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="topbar">
+<div class="container topbar-inner">
+<div class="topbar-left">Certified used cars • Transparent pricing • East Malaysia</div>
+<div class="topbar-right"><a href="contact.html">Support</a></div>
+</div>
+</div>
+<header class="header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<div class="brand-mark">BAH</div>
+<div class="brand-text">
+<div class="brand-name">BorneoAutoHub</div>
+<div class="brand-sub">Buy • Rent • Services</div>
+</div>
+</a>
+<form class="search" id="globalSearchForm">
+<input aria-label="Search cars" id="globalSearchInput" placeholder="Search: Myvi, SUV, 2021..." type="search"/>
+<button class="btn" type="submit">Search</button>
+</form>
+<nav class="nav"><a aria-label="Home" class="nav-icon" href="index.html"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3 3 10v10a1 1 0 0 0 1 1h6v-7h4v7h6a1 1 0 0 0 1-1V10l-9-7Z" fill="currentColor"></path></svg></a><a href="buy.html">Buy</a><a href="rent.html">Rent</a><div class="dropdown"><a class="dropbtn" href="services.html">Services<span class="caret">▾</span></a><div class="dropdown-menu"><a href="finance.html">Finance Calculator</a><a href="trade-in.html">Trade-in Estimation</a><a href="compare.html">Compare Cars</a><a href="services.html#inspection">Inspection Checklist</a></div></div><a href="contact.html">Contact</a></nav>
+</div>
+</header>
+<main class="container page">
+<div class="page-head reveal">
+<h1>Trade-in estimate</h1>
+<p class="muted">Get a quick estimate based on your car’s details. Final value depends on inspection.</p>
+</div>
+<section class="card reveal">
+<form class="form" id="tradeForm">
+<div class="field-grid">
+<label class="field">
+<span>Make</span>
+<input id="tMake" placeholder="Perodua, Honda, Toyota..." required="" type="text"/>
+</label>
+<label class="field">
+<span>Model</span>
+<input id="tModel" placeholder="Myvi, City, Vios..." required="" type="text"/>
+</label>
+</div>
+<div class="field-grid">
+<label class="field">
+<span>Year</span>
+<input id="tYear" max="2026" min="1995" placeholder="2020" required="" type="number"/>
+</label>
+<label class="field">
+<span>Mileage (km)</span>
+<input id="tMileage" min="0" placeholder="80000" required="" step="1000" type="number"/>
+</label>
+</div>
+<label class="field">
+<span>Condition</span>
+<select id="tCondition">
+<option value="excellent">Excellent</option>
+<option selected="" value="good">Good</option>
+<option value="fair">Fair</option>
+</select>
+</label>
+<button class="btn" type="submit">Get estimate</button>
+<div class="trade-out" id="tradeOut"></div>
+</form>
+</section>
+</main>
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-brand">BorneoAutoHub</div>
+<p class="muted">Certified listings, transparent pricing, and easy enquiries — built for a smooth car-buying experience.</p>
+</div>
+<div>
+<div class="footer-title">Explore</div>
+<a class="footer-link" href="buy.html">Buy vehicles</a>
+<a class="footer-link" href="rent.html">Rent a car</a>
+<a class="footer-link" href="trade-in.html">Trade-in estimate</a>
+</div>
+<div>
+<div class="footer-title">Support</div>
+<a class="footer-link" href="contact.html">Help &amp; Contact</a>
+<span class="footer-link muted">Mon–Fri, 9am–6pm</span>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>© <span id="yearNow"></span> BorneoAutoHub. All rights reserved.</span>
+<span class="muted">Prices and availability may change without notice.</span>
+</div>
+</footer>
+<div id="toastHost" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+<script>document.getElementById('yearNow').textContent = new Date().getFullYear();</script>
+<script>
+    document.getElementById('tradeForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const year = parseInt(document.getElementById('tYear').value,10);
+      const mileage = parseInt(document.getElementById('tMileage').value,10);
+      const cond = document.getElementById('tCondition').value;
+
+      // simple estimate model (frontend only)
+      const age = Math.max(0, new Date().getFullYear() - year);
+      let base = 60000;
+      base -= age * 3500;
+      base -= Math.max(0, mileage - 60000) * 0.08;
+      const mult = cond === 'excellent' ? 1.05 : cond === 'fair' ? 0.9 : 1.0;
+      const est = Math.max(3000, Math.round(base * mult));
+
+      const fmt = new Intl.NumberFormat('en-MY', {style:'currency', currency:'MYR', maximumFractionDigits:0});
+      document.getElementById('tradeOut').innerHTML = `
+        <div class="estimate">
+          <div class="k">Estimated trade-in value</div>
+          <div class="v">${fmt.format(est)}</div>
+          <div class="muted">This is an estimate. Final value depends on inspection and documentation.</div>
+        </div>
+      `;
+    });
+  </script>
+<script src="app.js"></script>
+</body>
+</html>

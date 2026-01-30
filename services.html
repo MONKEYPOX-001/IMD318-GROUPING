@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BorneoAutoHub | Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">Certified used cars • Transparent pricing • East Malaysia</div>
+    <div class="topbar-right"><a href="contact.html">Support</a></div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <div class="brand-mark">BAH</div>
+      <div class="brand-text">
+        <div class="brand-name">BorneoAutoHub</div>
+        <div class="brand-sub">Buy • Rent • Services</div>
+      </div>
+    </a>
+
+    <form id="globalSearchForm" class="search">
+      <input id="globalSearchInput" type="search" placeholder="Search: Myvi, SUV, 2021..." aria-label="Search cars" />
+      <button class="btn" type="submit">Search</button>
+    </form>
+
+    <nav class="nav">
+      <a class="nav-icon" href="index.html" aria-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 10v10a1 1 0 0 0 1 1h6v-7h4v7h6a1 1 0 0 0 1-1V10l-9-7Z" fill="currentColor"/></svg>
+      </a>
+      <a href="buy.html">Buy</a>
+      <a href="rent.html">Rent</a>
+      <div class="dropdown">
+        <a href="services.html" class="dropbtn">Services<span class="caret">▾</span></a>
+        <div class="dropdown-menu">
+          <a href="finance.html">Finance Calculator</a>
+          <a href="trade-in.html">Trade-in Estimation</a>
+          <a href="compare.html">Compare Cars</a>
+          <a href="services.html#inspection">Inspection Checklist</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <div class="page-head reveal">
+    <h1>Services</h1>
+    <p class="muted">Tools to help you buy with confidence — estimate monthly payments, compare cars, and plan a trade‑in.</p>
+  </div>
+
+  <section class="grid-3">
+    <a class="card pad reveal lift" href="finance.html">
+      <h3>Finance calculator</h3>
+      <p class="muted">Estimate monthly instalments with adjustable down payment and tenure.</p>
+      <div class="cta-row"><span class="link">Open calculator</span></div>
+    </a>
+
+    <a class="card pad reveal lift" href="trade-in.html">
+      <h3>Trade‑in estimation</h3>
+      <p class="muted">Get a quick estimated range based on make, year, mileage, and condition.</p>
+      <div class="cta-row"><span class="link">Estimate trade‑in</span></div>
+    </a>
+
+    <a class="card pad reveal lift" href="compare.html">
+      <h3>Compare cars</h3>
+      <p class="muted">Shortlist up to 3 cars and compare key specs side by side.</p>
+      <div class="cta-row"><span class="link">Compare now</span></div>
+    </a>
+  </section>
+
+  <section id="inspection" class="card pad reveal" style="margin-top:18px;">
+    <h2 style="margin-top:0;">Inspection checklist</h2>
+    <p class="muted">Every listing includes a basic inspection view. On a car page, click <b>Inspection</b> to see the checklist.</p>
+    <div class="spec-grid">
+      <div class="spec"><b>Engine & drivetrain</b><span class="muted">Oil leaks, idle, acceleration</span></div>
+      <div class="spec"><b>Body & paint</b><span class="muted">Panel gaps, dents, repaint</span></div>
+      <div class="spec"><b>Interior</b><span class="muted">Aircon, upholstery, controls</span></div>
+      <div class="spec"><b>Tyres & brakes</b><span class="muted">Tread, alignment, braking feel</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">BorneoAutoHub</div>
+      <div class="muted">Browse cars, book rentals, estimate trade‑ins — all in one place.</div>
+    </div>
+    <div class="footer-links">
+      <a href="buy.html">Buy</a>
+      <a href="rent.html">Rent</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Support</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year"></span> BorneoAutoHub. All rights reserved.</span>
+    
+  </div>
+</footer>
+<div id="toastHost" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

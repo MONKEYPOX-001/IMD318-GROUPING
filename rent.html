@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BorneoAutoHub | Rent</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="topbar">
+<div class="container topbar-inner">
+<div class="topbar-left">Certified used cars • Transparent pricing • East Malaysia</div>
+<div class="topbar-right"><a href="contact.html">Support</a></div>
+</div>
+</div>
+<header class="header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<div class="brand-mark">BAH</div>
+<div class="brand-text">
+<div class="brand-name">BorneoAutoHub</div>
+<div class="brand-sub">Buy • Rent • Services</div>
+</div>
+</a>
+<form class="search" id="globalSearchForm">
+<input aria-label="Search cars" id="globalSearchInput" placeholder="Search: Myvi, SUV, 2021..." type="search"/>
+<button class="btn" type="submit">Search</button>
+</form>
+<nav class="nav"><a aria-label="Home" class="nav-icon" href="index.html"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3 3 10v10a1 1 0 0 0 1 1h6v-7h4v7h6a1 1 0 0 0 1-1V10l-9-7Z" fill="currentColor"></path></svg></a><a href="buy.html">Buy</a><a href="rent.html">Rent</a><div class="dropdown"><a class="dropbtn" href="services.html">Services<span class="caret">▾</span></a><div class="dropdown-menu"><a href="finance.html">Finance Calculator</a><a href="trade-in.html">Trade-in Estimation</a><a href="compare.html">Compare Cars</a><a href="services.html#inspection">Inspection Checklist</a></div></div><a href="contact.html">Contact</a></nav>
+</div>
+</header>
+<main class="container page">
+<div class="page-head reveal">
+<h1>Rent a car</h1>
+<p class="muted">Simple daily rentals for travel, work, and family trips.</p>
+</div>
+<section class="grid" id="rentGrid"></section>
+</main>
+<div aria-hidden="true" class="modal" id="rentModal">
+<div class="modal-card">
+<div class="modal-head">
+<div>
+<div class="modal-title" id="rentCarName">Rent a car</div>
+<div class="modal-sub" id="rentRate"></div>
+</div>
+<button aria-label="Close" class="icon-btn" data-close="rentModal">✕</button>
+</div>
+<div class="modal-body">
+<form class="form" id="rentForm">
+<input id="rentCarId" type="hidden"/>
+<div class="field-grid">
+<label class="field">
+<span>Your name</span>
+<input id="rentName" placeholder="Your name" type="text"/>
+</label>
+<label class="field">
+<span>Phone number</span>
+<input id="rentPhone" placeholder="01X-XXXXXXX" type="tel"/>
+</label>
+</div>
+<label class="field">
+<span>Number of days</span>
+<input id="rentDays" min="1" type="number" value="1"/>
+</label>
+<div class="rent-total" id="rentTotal">Total: RM 0</div>
+<button class="btn" type="submit">Request booking</button>
+<div class="form-msg" id="rentMsg"></div>
+</form>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-brand">BorneoAutoHub</div>
+<p class="muted">Certified listings, transparent pricing, and easy enquiries — built for a smooth car-buying experience.</p>
+</div>
+<div>
+<div class="footer-title">Explore</div>
+<a class="footer-link" href="buy.html">Buy vehicles</a>
+<a class="footer-link" href="rent.html">Rent a car</a>
+<a class="footer-link" href="trade-in.html">Trade-in estimate</a>
+</div>
+<div>
+<div class="footer-title">Support</div>
+<a class="footer-link" href="contact.html">Help &amp; Contact</a>
+<span class="footer-link muted">Mon–Fri, 9am–6pm</span>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>© <span id="yearNow"></span> BorneoAutoHub. All rights reserved.</span>
+<span class="muted">Prices and availability may change without notice.</span>
+</div>
+</footer>
+<div id="toastHost" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+<script>document.getElementById('yearNow').textContent = new Date().getFullYear();</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
